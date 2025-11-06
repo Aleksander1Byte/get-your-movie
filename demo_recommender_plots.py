@@ -37,19 +37,11 @@ matplotlib.rcParams["axes.unicode_minus"] = False
 DATA_DIR = "."
 N = 7
 ALPHA = 0.85
-REGIONS = ["western", "china", "hongkong", "japan"]
+REGIONS = ["western"]
 
 # A compact set of globally famous/popular titles (mixed languages to test robustness).
 # The recommender is robust to language via char n-grams and fallback similarity.
-FAVORITES = [
-    "The Godfather",
-    "Inception",
-    "Amélie",
-    "Das Leben der Anderen",
-    "霸王别姬",
-    "无间道",
-    "千与千寻",
-]
+FAVORITES = ["教父2", "教父3"]
 
 OUT_DIR = "demo_plots"
 

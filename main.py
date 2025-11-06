@@ -1,8 +1,8 @@
 from get_your_movie import recommend_movies
 
 data_dir = "."
-favorites = ["Amélie", "Das Leben der Anderen", "La vita è bella"]
-targets = ["western", "china", "hongkong", "japan"]
+favorites = ["教父"]
+targets = ["western", "china"]
 
 for region in targets:
     recs = recommend_movies(
