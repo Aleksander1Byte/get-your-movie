@@ -1,17 +1,17 @@
 # Get Your Movie 🎬
 
 A **content-based movie recommender** for a Douban-style dataset.  
-You give it your favorite movies and a target region, it recommends top-N titles from that region — fast and explainably. ✨
+You give it your favorite movies and a target region, it recommends top-N titles from that region - fast and explainably. ✨
 
 ---
 
 ## What’s in the box
 
-- `get_your_movie.py` — the recommender (CLI + importable API)
-- `main.py` — minimal API usage example
-- `demo_recommender_plots.py` — super-simple demo that makes a couple of charts
-- `requirements.txt` — dependencies
-- `douban_all_movies.csv` — the master dataset (required)
+- `get_your_movie.py` - the recommender (CLI + importable API)
+- `main.py` - minimal API usage example
+- `demo_recommender_plots.py` - super-simple demo that makes a couple of charts
+- `requirements.txt` - dependencies
+- `douban_all_movies.csv` - the master dataset (required)
 
 > ℹ️ The code looks **only** for the master dataset file `douban_all_movies.csv` in your working directory.
 
@@ -24,7 +24,7 @@ You give it your favorite movies and a target region, it recommends top-N titles
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# install deps
+# install dependencies
 pip install -r requirements.txt
 ```
 
@@ -34,15 +34,15 @@ Recommended Python: **3.9+**
 
 ## Dataset
 
-Place **`douban_all_movies.csv`** next to the scripts.  
-Expected columns (the more, the better):
+Dataset **`douban_all_movies.csv`** is next to the scripts.  
+The columns are:
 
 ```
 title, rating, total_ratings, directors, actors, screenwriters,
 release_date, genres, countries, languages, runtime, summary, link, tags
 ```
 
-At minimum, `title` and `countries` should be present for best results.
+You can play around with settings, but at least `title` and `countries` should be present for best results.
 
 ---
 
@@ -109,10 +109,10 @@ python demo_recommender_plots.py
 ```
 
 Outputs go to the `demo_plots/` folder:
-- `*_score_bars.png` — blended score bars
-- `*_sim_vs_rating.png` — similarity vs normalized rating (top-3 annotated)
-- `*.csv` — the raw recommendation tables
-- `*.txt` — short notes
+- `*_score_bars.png` - blended score bars
+- `*_sim_vs_rating.png` - similarity vs normalized rating (top-3 annotated)
+- `*.csv` - the raw recommendation tables
+- `*.txt` - short notes
 
 ---
 
