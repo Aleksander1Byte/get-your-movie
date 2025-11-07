@@ -1,17 +1,17 @@
 # Get Your Movie 🎬
 
 A **content-based movie recommender** for a Douban-style dataset.  
-Give it your favorite movies and a target region — it returns top‑N titles from that region, fast and explainably. ✨
+Give it your favorite movies and a target region - it returns top‑N titles from that region, fast and explainably. ✨
 
 ---
 
 ## What’s in the box
 
-- `get_your_movie.py` — the recommender (CLI + importable API)
-- `main.py` — minimal API usage example
-- `demo_recommender_plots.py` — tiny demo that makes a couple of charts
-- `requirements.txt` — dependencies
-- `douban_all_movies.csv` — the master dataset (required)
+- `get_your_movie.py` - the recommender (CLI + importable API)
+- `main.py` - minimal API usage example
+- `demo_recommender_plots.py` - tiny demo that makes a couple of charts
+- `requirements.txt` - dependencies
+- `douban_all_movies.csv` - the master dataset (required)
 
 > ℹ️ The code looks **only** for `douban_all_movies.csv` in your working directory.
 
@@ -39,7 +39,7 @@ If these aren’t installed, the system gracefully falls back to the classic (no
 
 ## Mainland China setup (Hugging Face mirror) 🇨🇳
 
-If you’re in China and model downloads from `huggingface.co` are blocked, set a mirror before the **first** run that uses sentence-transformers:
+If you’re in China and model downloads from `huggingface.co` are blocked, set up a mirror:
 
 ```bash
 export HF_ENDPOINT="https://hf-mirror.com"
@@ -57,8 +57,8 @@ python main.py
 
 ## Dataset
 
-Place **`douban_all_movies.csv`** next to the scripts.  
-Expected columns (the more, the better):
+Dataset **`douban_all_movies.csv`** is next to the scripts.  
+Expected columns (you can tweak them in the code):
 
 ```
 title, rating, total_ratings, directors, actors, screenwriters,
@@ -73,11 +73,11 @@ At minimum, `title` and `countries` should be present for best results.
 
 ### 1) CLI
 
-Recommend 10 **Western** movies for a user who likes *In Bruges* and *Amélie*:
+Recommend 10 **Western** movies for a user who likes *In Bruges* and *教父*:
 
 ```bash
 python get_your_movie.py \
-  --favorites "In Bruges; Amélie" \
+  --favorites "In Bruges; 教父" \
   --region western \
   --n 10 \
   --data_dir .
@@ -87,7 +87,7 @@ Other valid regions: `china`, `hongkong`, `japan`.
 
 Tune the score blend (content vs rating):
 ```bash
-python get_your_movie.py --favorites "教父; The godfather 2" --region japan --n 12 --alpha 0.9
+python get_your_movie.py --favorites "教父; The Godfather 2" --region japan --n 12 --alpha 0.9
 ```
 
 Help:
@@ -125,10 +125,10 @@ Generate a small report with **two charts per region** and CSVs:
 python demo_recommender_plots.py
 ```
 Outputs go to `demo_plots/`:
-- `*_score_bars.png` — blended score bars
-- `*_sim_vs_rating.png` — similarity vs normalized rating (top‑3 annotated)
-- `*.csv` — raw recommendation tables
-- `*.txt` — short notes
+- `*_score_bars.png` - blended score bars
+- `*_sim_vs_rating.png` - similarity vs normalized rating (top‑3 annotated)
+- `*.csv` - raw recommendation tables
+- `*.txt` - short notes
 
 > 🈶 If you see “missing glyph” warnings or squares for CJK titles, install CJK fonts (e.g. *Noto Sans CJK*) and set a CJK font family in Matplotlib.
 
